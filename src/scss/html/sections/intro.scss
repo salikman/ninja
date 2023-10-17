@@ -1,0 +1,109 @@
+.intro {
+  background: #181818;
+
+  &-item {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100%;
+      height: 800px;
+      padding-top: 80px;
+
+      @media (max-width: 1550px) {
+        height: 600px;
+      }
+      @media (max-width: 991px) {
+        height: 500px;
+      }
+      @media (max-width: 767px) {
+        height: 330px;
+        padding-top: 30px;
+      }
+    }
+
+    &__title {
+      position: relative;
+      margin-bottom: 30px;
+      @include adaptiv-font(50, 20);
+      font-style: normal;
+      font-weight: 800;
+      line-height: 159.523%; /* 79.761px */
+      letter-spacing: 9.25px;
+      text-transform: uppercase;
+      text-align: right;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 16%;
+        height: 10px;
+        background: url("../img/line.png") repeat-x right;
+      }
+    }
+
+    &__desc {
+      text-align: right;
+      @include adaptiv-font(28, 12);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 159.523%; /* 44.666px */
+      text-transform: capitalize;
+    }
+
+    &__num {
+      position: absolute;
+      bottom: -165px;
+      right: 0;
+      color: rgba(0, 0, 0, 0.53);
+      @include adaptiv-font(400, 136);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -12px;
+      text-transform: uppercase;
+
+      @media (max-width: 991px) {
+        bottom: -100px;
+      }
+      @media (max-width: 767px) {
+        bottom: -80px;
+      }
+    }
+  }
+
+  .swiper {
+    width: calc(100% - 120px);
+    margin: auto;
+    border-radius: 0 0 26px 26px;
+
+    @media (max-width: 991px) {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

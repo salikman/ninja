@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/base/head.html', {
+    "title": "Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/base/header.html', {})
+        <main class="page">
+            <div data-observ></div>
+
+            @@include('html/sections/intro.html', {})
+            @@include('html/sections/advantages.html', {})
+            @@include('html/sections/services.html', {})
+            @@include('html/sections/table.html', {})
+            @@include('html/sections/block-text.html', {})
+            @@include('html/sections/courses.html', {})
+            @@include('html/sections/feedback.html', {})
+
+        </main>
+        @@include('html/base/footer.html', {})
+    </div>
+
+    @@include('html/elements/modal.html')
+
+    @@include('html/base/script.html', {})
+</body>
+</html>

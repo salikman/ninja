@@ -1,0 +1,176 @@
+@use "sass:math";
+
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+        url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+// Firefox
+* {
+    scrollbar-width: rem(8);
+    scrollbar-color: $firstAccentColor #d6d6d6;
+
+    // Chrome, Edge, and Safari
+    &::-webkit-scrollbar {
+        width: 8px;
+        background-color: rgba(24, 24, 24, 0.88);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 rem(6) rgba(#000, 20%);
+        border-radius: 10px;
+        background-color: rgba(24, 24, 24, 0.88);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 0 none #fff;
+        background-color: lighten($firstAccentColor, 10%);
+        transition: all 280ms ease-in-out;
+
+        &:hover {
+            background-color: $firstAccentColor;
+        }
+    }
+}
+
+// !TO PERCENT %:
+//@function prc($pxOne, $pxTwo) {
+//    $result: math.div($pxOne, $pxTwo) * 100%;
+//    @return $result;
+//}
+
+//!TO REM:
+@function rem($px) {
+    $result:  #{$px / 16} + "rem";
+    @return $result;
+}
+
+// !gradient for text
+@mixin textGradient($gradient) {
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// !media
+@mixin media($width) {
+    @media (max-width: #{$width + '.98' + px}) {
+        @content;
+    }
+}
+
+// !:not (last-child)
+@mixin notLast() {
+    &:not(:last-child) {
+        @content;
+    }
+}
+
+// !:not (first-child)
+@mixin notFirst() {
+    &:not(:first-child) {
+        @content;
+    }
+}
+
+// !обрезает текст до определенного кол-ва строк, остаток заменяет на 3 точки (...)
+@mixin lineClamp($value) {
+    display: -webkit-box;
+    -webkit-line-clamp: $value;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+// !styled placeholder for TextArea
+@mixin styledPlaceholder($color, $fontSize: inherit, $lineHeight: normal) {
+    &:-moz-placeholder {
+        color: $color;
+        font-size: $fontSize;
+        line-height: $lineHeight;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+        font-size: $fontSize;
+        line-height: $lineHeight;
+    }
+
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-size: $fontSize;
+        line-height: $lineHeight;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+        font-size: $fontSize;
+        line-height: $lineHeight;
+    }
+}
+
+// !плавное убирание placeholder
+@mixin hidePlaceholder($time: 300, $effect: ease) {
+    &::-webkit-input-placeholder {
+        opacity: 1;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &::-moz-placeholder {
+        opacity: 1;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &:-moz-placeholder {
+        opacity: 1;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &:-ms-input-placeholder {
+        opacity: 1;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &:focus::-webkit-input-placeholder {
+        opacity: 0;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &:focus::-moz-placeholder {
+        opacity: 0;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &:focus:-moz-placeholder {
+        opacity: 0;
+        transition: opacity #{$time}+ms $effect;
+    }
+
+    &:focus:-ms-input-placeholder {
+        opacity: 0;
+        transition: opacity #{$time}+ms $effect;
+    }
+}
+
+// !after-before
+@mixin afterBefore($type, $pos: absolute) {
+    &::#{$type} {
+        content: '';
+        position: $pos;
+        @content
+    }
+}

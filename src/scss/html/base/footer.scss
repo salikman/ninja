@@ -1,0 +1,94 @@
+.footer {
+  padding: 50px 0;
+  background: #000;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 'phone logo social' 'copy copy copy';
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      grid-template-areas: none;
+      justify-content: center;
+    }
+  }
+
+  &__phone {
+    color: $firstAccentColor;
+    font-family: 'Nunito';
+    @include adaptiv-font(32, 18);
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 5.92px;
+    text-transform: uppercase;
+
+    @media (min-width: 992px) {grid-area: phone;}
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 297px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    @media (min-width: 992px) {grid-area: logo;}
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (min-width: 992px) {grid-area: social;}
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 30px;
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            width: 49px;
+            height: 49px;
+          }
+        }
+      }
+    }
+
+    p {
+      font-size: 16px;
+      text-align: right;
+    }
+  }
+
+  &__reserved {
+    text-align: center;
+
+    @media (min-width: 992px) {grid-area: copy;}
+
+    p {
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: 2.405px;
+      text-transform: uppercase;
+    }
+  }
+}

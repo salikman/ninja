@@ -1,0 +1,109 @@
+.header {
+  position: relative;
+  background: #181818;
+  z-index: 99;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: 130px;
+
+    @media (max-width: 991px) {
+      height: 75px;
+    }
+  }
+  
+  &__logo {
+    position: relative;
+    width: 300px;
+    height: 100px;
+
+    @media (max-width: 991px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 145px;
+      height: 60px;
+      margin-bottom: auto;
+      margin-right: 30px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 390px;
+      height: 150px;
+      border-radius: 0 0 11px 11px;
+      background: #000;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+      @media (max-width: 991px) {
+        top: 0;
+        left: rem(-20);
+        transform: none;
+        width: 145px;
+        height: 60px;
+        border-radius: 0px 0px 11px 0;
+      }
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      @media (max-width: 991px) {
+        width: 115px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__info {
+    width: 100%;
+
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 7px;
+    }
+  }
+
+  &__phone {
+    color: $firstAccentColor;
+    font-family: 'Nunito';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 2.22px;
+    text-transform: uppercase;
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__description {
+    flex: 1;
+    text-align: center;
+    font-size: 25px;
+    @include adaptiv-font(25, 8);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 4.625px;
+    text-transform: uppercase;
+
+    @media (max-width: 991px) {
+      text-align: right;
+      letter-spacing: 1.48px;
+    }
+  }
+}

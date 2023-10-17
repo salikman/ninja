@@ -1,0 +1,28 @@
+.modal {
+  max-width: 747px;
+  padding: 40px 60px;
+  padding-right: 10px;
+  border-radius: 23.77px;
+  border: 5px solid #484747;
+  background: rgba(24, 24, 24, 0.88);
+
+  @media (min-width: 992px) {
+    .modal-content {
+      max-height: 600px;
+      overflow: auto;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-right: 50px;
+    font-size: 21.473px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 159.523%;
+    letter-spacing: 1.396px;
+    text-transform: capitalize;
+  }
+}
