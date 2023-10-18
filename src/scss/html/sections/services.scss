@@ -32,7 +32,7 @@
       background: #CB4C05;
       border-radius: 6px;
       text-align: center;
-      @include adaptiv-font(42, 21);
+      @include adaptiv-font(42, 17);
       font-style: normal;
       font-weight: 700;
       line-height: 91.445%; /* 38.407px */
@@ -41,21 +41,10 @@
     }
 
     @media (max-width: 991px) {
-      &:before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        height: 100%;
-        background: #CB4C05;
-        border-radius: 10px;
-      }
-
       p {
-        padding: 0;
-        background: transparent;
+        padding: 10px 20px;
+        letter-spacing: 3.145px;
+        border-radius: 2.7px;
       }
     }
   }

@@ -20,6 +20,10 @@
     line-height: 125.445%;
     letter-spacing: 5.55px;
     text-transform: uppercase;
+
+    @media (max-width: 991px) {
+      letter-spacing: 2.96px;
+    }
   }
 
   &__img {
@@ -66,7 +70,8 @@
         width: 100%;
 
         @media (max-width: 991px) {
-          gap: 6px;
+          grid-template-columns: 1fr;
+          gap: 15px;
         }
 
         @media (max-width: 767px) {
@@ -129,7 +134,7 @@
           height: 68px;
 
           @media (max-width: 991px) {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 40px;
             height: 40px;
           }
 
@@ -157,7 +162,12 @@
 
           &__arrow {
             @media (max-width: 991px) {
-              display: none;
+              height: 40px;
+
+              svg {
+                width: 100%;
+                height: 40px;
+              }
             }
           }
 

@@ -30,6 +30,7 @@
     text-transform: uppercase;
 
     @media (min-width: 992px) {grid-area: phone;}
+    @media (max-width: 991px) {order: 1}
   }
 
   &__logo {
@@ -43,6 +44,7 @@
     }
 
     @media (min-width: 992px) {grid-area: logo;}
+    @media (max-width: 991px) {order: 3}
   }
 
   &__social {
@@ -51,6 +53,10 @@
     align-items: flex-end;
 
     @media (min-width: 992px) {grid-area: social;}
+    @media (max-width: 991px) {
+      order: 2;
+      margin-left: auto;
+    }
 
     ul {
       display: flex;
@@ -81,6 +87,7 @@
     text-align: center;
 
     @media (min-width: 992px) {grid-area: copy;}
+    @media (max-width: 991px) {order: 4}
 
     p {
       font-size: 13px;
