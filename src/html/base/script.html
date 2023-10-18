@@ -10,6 +10,7 @@
     $(document).ready(function() {
         var dropdown = $('.select__dropdown');
         var selectCurrent = $('.select__current');
+        var hiddenInput = $('.select__hidden');
 
         $('.select__arrow, .select__current').click(function(event) {
             dropdown.toggle();
@@ -22,6 +23,9 @@
             dropdown.hide();
             // Додайте стиль для select__current, наприклад, червоний колір
             selectCurrent.css('color', 'black');
+
+            // Оновіть значення прихованого поля з вибраним варіантом
+            hiddenInput.val(selectedText);
         });
 
         // Додайте обробник подій для документа для закриття дропдаун-списку при кліку поза ним

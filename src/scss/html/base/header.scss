@@ -35,7 +35,7 @@
       top: -15px;
       left: 50%;
       transform: translateX(-50%);
-      width: 390px;
+      width: 300px;
       height: 150px;
       border-radius: 0 0 11px 11px;
       background: #000;
@@ -65,29 +65,29 @@
   }
 
   &__info {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: calc(100% - 300px);
 
     @media (max-width: 991px) {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       gap: 7px;
+      width: 100%;
     }
   }
 
   &__phone {
     color: $firstAccentColor;
     font-family: 'Nunito';
-    font-size: 12px;
+    @include adaptiv-font(25, 12);
     font-style: normal;
     font-weight: 900;
     line-height: normal;
     letter-spacing: 2.22px;
     text-transform: uppercase;
-
-    @media (min-width: 992px) {
-      display: none;
-    }
   }
 
   &__description {

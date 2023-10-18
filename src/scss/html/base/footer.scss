@@ -55,7 +55,7 @@
     @media (min-width: 992px) {grid-area: social;}
     @media (max-width: 991px) {
       order: 2;
-      margin-left: auto;
+      align-items: center;
     }
 
     ul {
@@ -80,6 +80,10 @@
     p {
       font-size: 16px;
       text-align: right;
+
+      @media (max-width: 991px) {
+        text-align: center;
+      }
     }
   }
 
