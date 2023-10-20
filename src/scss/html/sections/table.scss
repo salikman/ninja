@@ -121,79 +121,69 @@
     }
   }
 
-  &__header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    margin-bottom: 13px;
-    padding: 20px;
-    border-radius: 28.308px 28.308px 0 0;
-    background: #000;
+  table {
+    thead {
+      td {
+        padding: 20px;
+        background: #000;
 
-    @media (max-width: 767px) {
-      padding: 11px;
-      margin-bottom: 7px;
-    }
+        @media (max-width: 767px) {
+          padding: 11px;
+        }
 
-    span {
-      text-align: center;
-      @include adaptiv-font(32, 17);
-      font-style: normal;
-      font-weight: 700;
-      line-height: 1; /* 52.105px */
-      text-transform: capitalize;
-    }
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    @media (max-width: 767px) {
-      gap: 2px;
-    }
-  }
-
-  &__row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-
-    @media (max-width: 767px) {
-      gap: 2px;
-    }
-
-    &:last-child {
-      .table__col:first-child {
-        border-radius: 0px 0px 0px 15.524px;
+        &:first-child {
+          border-radius: 28.308px 0 0 0;
+        }
+        &:last-child {
+          border-radius: 0 28.308px 0 0;
+        }
       }
-      .table__col:last-child {
-        border-radius: 0px 0px 15.524px 0;
+      span {
+        display: block;
+        text-align: center;
+        @include adaptiv-font(32, 17);
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1; /* 52.105px */
+        text-transform: capitalize;
       }
     }
-  }
 
-  &__col {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    min-height: 70px;
+    .table__row {
+      background: white;
 
-    @media (max-width: 540px) {
-      min-height: 40px;
+      &:last-child {
+        .table__col:first-child {
+          border-radius: 0px 0px 0px 15.524px;
+        }
+        .table__col:last-child {
+          border-radius: 0px 0px 15.524px 0;
+        }
+      }
     }
 
-    span {
-      color: #000;
-      text-align: center;
-      font-size: 23.953px;
-      @include adaptiv-font(24, 13);
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.2;
-      text-transform: capitalize;
+    .table__col {
+      width: calc(100% / 3);
+      background: white;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 70px;
+        margin: auto;
+
+        @media (max-width: 540px) {
+          min-height: 40px;
+        }
+        color: #000;
+        text-align: center;
+        @include adaptiv-font(21, 13);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.2;
+        text-transform: capitalize;
+      }
     }
   }
 }
